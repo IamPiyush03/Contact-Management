@@ -1,0 +1,211 @@
+/* Root container for centering content */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* General logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms ease, transform 300ms ease;
+}
+
+/* Hover effect for logos */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.05);  /* Slight zoom effect on hover */
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Animation for logo spinning */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduce motion preference for logo animation */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card container styling */
+.card {
+  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Contact form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 300ms ease;
+}
+
+input:focus {
+  border-color: #61dafb;
+}
+
+button {
+  padding: 1rem;
+  background-color: #61dafb;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #21a1f1;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+button:active {
+  transform: scale(1); /* Remove zoom on click */
+}
+
+/* Contacts table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+/* Button styling for table delete actions */
+button.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.delete-btn:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+button.delete-btn:active {
+  transform: scale(1);
+}
+
+/* Loading indicator for contacts */
+.loading {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading::before {
+  content: "Loading...";
+  margin-right: 10px;
+}
+
+/* Read the Docs link */
+.read-the-docs {
+  color: #888;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  display: block;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  input {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 4em;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .contacts-table th,
+  .contacts-table td {
+    padding: 0.8rem;
+  }
+
+  .loading {
+    font-size: 1rem;
+  }
+}
